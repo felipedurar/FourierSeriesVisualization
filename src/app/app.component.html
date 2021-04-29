@@ -19,6 +19,8 @@
       <div class="form-inline my-2 my-lg-0">
         <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
         <label class="mr-sm-2" style="color: white; padding-right: 20px;">t = {{ t | number :  '1.2-2' }}</label>
+        <button class="btn btn-success my-2 my-sm-0" style="padding-right: 20px;" (click)="pauseSim()" *ngIf="simStatus"
+          [ngClass]="{'btn-success': paused, 'btn-warning' : !paused }">{{ paused ? 'Continue' : 'Pause' }}</button>
         <button class="btn btn-success my-2 my-sm-0" (click)="startStopSim()" 
           [ngClass]="{'btn-success': !simStatus, 'btn-danger' : simStatus }">{{ simStatus ? 'Stop' : 'Start' }} Simulation</button>
       </div>

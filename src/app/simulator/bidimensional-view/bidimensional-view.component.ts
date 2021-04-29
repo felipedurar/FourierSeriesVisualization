@@ -52,6 +52,11 @@ export class BidimensionalViewComponent implements OnInit, AfterViewInit {
         }, 200);
       }
     });
+    this.statusService.paused.subscribe((status) => {
+      if (this.statusService.runStatus.getValue()) {
+        this.running = !status;
+      }
+    });
   }
 
 

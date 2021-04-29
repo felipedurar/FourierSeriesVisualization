@@ -65,6 +65,11 @@ export class WaveViewComponent implements OnInit, AfterViewInit {
         }
       }
     });
+    this.statusService.paused.subscribe((status) => {
+      if (this.statusService.runStatus.getValue()) {
+        this.running = !status;
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -86,7 +91,6 @@ export class WaveViewComponent implements OnInit, AfterViewInit {
     this.offScreenCanvas1.width = this.w / 2;
     this.offScreenCanvas1.height = this.h;
     this.offscreenContext1 = this.offScreenCanvas1.getContext("2d");
-
 
     this.offScreenCanvas2 = document.createElement('canvas');
     this.offScreenCanvas2.width = this.w / 2;
