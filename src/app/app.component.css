@@ -1,0 +1,5 @@
+
+.router-outlet-container {
+    height: calc(100% - 56px);
+}
+
