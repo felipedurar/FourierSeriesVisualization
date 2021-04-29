@@ -6,7 +6,7 @@ Fourier Series Visualization Tool
 
 ![alt text](screenshots/Screenshot_1.png)
 
-![alt text](screenshots/Screenshot_2.png)
+![alt text](screenshots/Screenshot_3.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
