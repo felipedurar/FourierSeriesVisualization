@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { SeriesComponent } from './series/series.component';
 import { BidimensionalViewComponent } from './bidimensional-view/bidimensional-view.component';
 import { WaveViewComponent } from './wave-view/wave-view.component';
+import { SerieDialogComponent } from './serie-dialog/serie-dialog.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -14,12 +16,17 @@ import { WaveViewComponent } from './wave-view/wave-view.component';
     SimulatorComponent,
     SeriesComponent,
     BidimensionalViewComponent,
-    WaveViewComponent
+    WaveViewComponent,
+    SerieDialogComponent
+  ],
+  entryComponents: [
+    SerieDialogComponent
   ],
   imports: [
     CommonModule,
     SimulatorRoutingModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ]
 })
 export class SimulatorModule { }

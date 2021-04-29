@@ -1,15 +1,15 @@
 <div class="container-fluid h-100">
     <div class="row h-100">
-        <div class="col-md-3 h-100 p-0" style="border-right: 1px solid rgba(0,0,0,.125);">
+        <div class="col-md-3 h-100 p-0" style="border-right: 1px solid rgba(0,0,0,.125); overflow-y: scroll;">
             <app-series [(series)]="series"></app-series>
         </div>
         <div class="col-md-9 h-100 p-0">
             <div class="container-fluid h-100" style="">
-                <div class="row h-75 w-100" style="border-bottom: 1px solid rgba(0,0,0,.125);">
-                    <app-bidimensional-view [(series)]="series" class="w-100"></app-bidimensional-view>
+                <div class="row h-75 w-100" style="border-bottom: 1px solid rgba(0,0,0,.5);">
+                    <app-bidimensional-view [(series)]="series" class="w-100 h-100"></app-bidimensional-view>
                 </div>
-                <div class="row h-25 w-100">
-                    <app-wave-view class="w-100"></app-wave-view>
+                <div class="row h-25 w-100" style="border-top: 3px solid rgba(0,0,0,1);">
+                    <app-wave-view [(series)]="series" class="w-100 h-100"></app-wave-view>
                 </div>
             </div>
         </div>

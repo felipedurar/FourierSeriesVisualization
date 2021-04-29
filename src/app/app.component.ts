@@ -10,10 +10,14 @@ export class AppComponent {
   title = 'FourierSeriesVisualization';
 
   public simStatus = false;
+  public t = 0;
 
   constructor(private statusService: StatusService) {
     statusService.runStatus.subscribe((status) => {
       this.simStatus = status;
+    });
+    statusService.time.subscribe((nt) => {
+      this.t = nt;
     });
   }
 

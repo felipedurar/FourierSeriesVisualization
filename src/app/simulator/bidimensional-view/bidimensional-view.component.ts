@@ -45,6 +45,7 @@ export class BidimensionalViewComponent implements OnInit, AfterViewInit {
       this.running = status;
       if (!this.running) {
         this.t = 0;
+        this.statusService.time.next(this.t);
 
         setTimeout(() => {
           this.clearOffscreen();
@@ -57,6 +58,8 @@ export class BidimensionalViewComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const w = this.bidimensionalView.nativeElement.offsetWidth;
     const h = this.bidimensionalView.nativeElement.offsetHeight;
+
+    this.statusService.bidimensionalViewHeight.next(h);
     
     this.tX = w / 2;
     this.tY = h / 2;
@@ -74,8 +77,10 @@ export class BidimensionalViewComponent implements OnInit, AfterViewInit {
       this.draw();
 
       //
-      if (this.running)
-        this.t += 1;
+      if (this.running) {
+        this.t += 0.1;
+        this.statusService.time.next(this.t);
+      }
     }, 10);
   }
 
