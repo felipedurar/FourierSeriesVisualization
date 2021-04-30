@@ -1,6 +1,6 @@
 <ul class="list-group">
     <li class="list-group-item" style="font-size: 24px;">f(<span style="color: coral;">t</span>) =</li>
-    <li class="list-group-item" *ngFor="let cSerie of series">
+    <li class="list-group-item" *ngFor="let cSerie of series" (click)="editSerie(cSerie)">
         <div class="serie-item">
             <div style="font-size: 24px;">+ <span style="color: cadetblue;">({{ formatVal(cSerie.real) }}+{{ formatVal(cSerie.imaginary) }}i)</span>.e</div>
             <div style="font-size: 18px; padding-top: -20px;"><span style="color: yellowgreen;">{{ formatVal(cSerie.exponent) }}</span>.2&pi;i<span style="color: coral;">t</span></div>

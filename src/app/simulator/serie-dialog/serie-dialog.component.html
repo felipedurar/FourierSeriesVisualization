@@ -5,9 +5,26 @@
     </button>
 </div>
 <div class="modal-body">
-    <p>Hello, {{name}}!</p>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Real</span>
+        <input type="text" class="form-control" [(ngModel)]="real" placeholder="Real" aria-label="Real" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Imaginary</span>
+        <input type="text" class="form-control" [(ngModel)]="imaginary" placeholder="Imaginary" aria-label="Imaginary"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Exponent</span>
+        <input type="text" class="form-control" [(ngModel)]="exponent" placeholder="Exponent" aria-label="Exponent"
+            aria-describedby="basic-addon1">
+    </div>
+
+
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cancel</button>
-    <button type="button" class="btn btn-success" (click)="activeModal.close('Close click')">Add</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(null)">Cancel</button>
+    <button type="button" class="btn btn-success" (click)="add()">Add</button>
 </div>

@@ -8,6 +8,7 @@ import { BidimensionalViewComponent } from './bidimensional-view/bidimensional-v
 import { WaveViewComponent } from './wave-view/wave-view.component';
 import { SerieDialogComponent } from './serie-dialog/serie-dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     SimulatorRoutingModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ]
 })
 export class SimulatorModule { }

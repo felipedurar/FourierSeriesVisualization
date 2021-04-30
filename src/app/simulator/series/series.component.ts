@@ -47,12 +47,26 @@ export class SeriesComponent implements OnInit {
     const modalRef = this.modalService.open(SerieDialogComponent, { centered: true });
     modalRef.componentInstance.serie = new SerieModel();
     modalRef.result.then((result) => {
-      this._series.push(result);
+      if (result) {
+        this._series.push(result);
+      }
     });
   }
 
   formatVal(val) {
     return val.toFixed(2).replace('.', ',');
+  }
+
+  editSerie(cSerie) {
+    const modalRef = this.modalService.open(SerieDialogComponent, { centered: true });
+    modalRef.componentInstance.serie = Object.assign({}, cSerie);
+    modalRef.result.then((result) => {
+      if (result) {
+        cSerie.real = result.real;
+        cSerie.imaginary = result.imaginary;
+        cSerie.exponent = result.exponent;
+      }
+    });
   }
 
 }
